@@ -11,6 +11,19 @@ interface Iprops {
     }[]>>
 }
 
+/*
+// without React.FC
+// One Way
+  type AddToListProps = Iprops
+  const AddToList = ({ people, setPeople}: AddToListProps) => {...
+// Another Way
+  const AddToList = ({ people, setPeople}: Iprops) => {...
+*/
+/*
+// using React.FC
+const AddToList: React.FC<Iprops> = ({ people, setPeople}) => {...
+*/
+
  const AddToList: React.FC<Iprops> = ({ people, setPeople}) => {
     
     const [input, setInput] = useState({
@@ -32,7 +45,7 @@ interface Iprops {
             return
         
         setPeople(
-            prevPeopleState => 
+            prevPeopleState =>
             [
             ...prevPeopleState,
             {

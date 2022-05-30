@@ -12,9 +12,19 @@ type/interface IProps = {
   }
 */
 
-// without React.RF
+/*
+// without React.FC
 type peopleProps = IProps
-const List = ({ people }: peopleProps) => {
+const List = ({ people }: peopleProps) => {...
+*/
+
+/*
+// Using React.FC
+const List: React.FC<IProps> = ({ people }) => {...
+*/
+
+type peopleProps = IProps
+const List = ({ people }: peopleProps) => { 
 
     const renderList = (): JSX.Element[] => {
          return people.map((person, index) => 
