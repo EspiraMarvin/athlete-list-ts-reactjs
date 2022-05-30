@@ -31,8 +31,10 @@ interface Iprops {
         if(!input.name || !input.age || !input.img) 
             return
         
-        setPeople([
-            ...people,
+        setPeople(
+            prevPeopleState => 
+            [
+            ...prevPeopleState,
             {
                 name: input.name,
                 age: parseInt(input.age),
